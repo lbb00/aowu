@@ -15,7 +15,7 @@ global.waitForPackage = function(packageName, period, timeout) {
   period = period || 200
   timeout = timeout || 5000
   const startTime = new Date().getTime()
-  while (currentPackage() != packageName) {
+  while (currentPackage() !== packageName) {
     if (new Date().getTime() - startTime >= timeout) {
       return false
     }
