@@ -1,4 +1,3 @@
-const getMaid = require('../common/maid')
 const maid = getMaid('com.paic.zhifu.wallet.activity')
 
 function task() {

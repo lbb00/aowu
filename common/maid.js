@@ -10,4 +10,6 @@ function getMaid(packageName) {
   }
 }
 
+global.getMaid = getMaid
+
 module.exports = getMaid

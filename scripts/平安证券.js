@@ -1,4 +1,3 @@
-const getMaid = require('../common/maid')
 const maid = getMaid('com.hundsun.winner.pazq')
 
 function task() {

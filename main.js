@@ -1,4 +1,5 @@
 require('./common/better')
+require('./common/maid')
 
 const yunshanfu = require('./scripts/云闪付')
 const yiqianbao = require('./scripts/壹钱包')
