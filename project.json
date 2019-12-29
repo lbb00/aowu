@@ -2,8 +2,8 @@
   "name": "嗷呜",
   "main": "main.js",
   "ignore": ["build"],
-  "packageName": "com.example",
-  "versionName": "0.0.1",
+  "packageName": "com.onelong.aowu",
+  "versionName": "0.1.0",
   "versionCode": 1,
   "author": "onelong"
 }
