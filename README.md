@@ -4,21 +4,43 @@
 
 ## 支持
 
+### APP
+
+- 京东商城
+  - 签到
+- 京东金融-学生版
+  - 签到领成长值
+- LYNK&CO
+  - 分享送 co 币
 - 平安证券
   - 签到
 - 壹钱包
   - 签到
 - 云闪付
   - 签到
+- KFC
+  - 签到
+- 中国联通
+  - 签到
 
-> 测试机型 小米 8 - MIUI11
+### 机型
+
+- 小米 8 MIUI11
 
 ## 如何使用
 
 1. 下载 autojs8 pro，pro 版本需要购买，支持一下作者吧
 2. 将本仓库下载解压到手机中的 autojs 项目目录
 3. 需要给 autojs8 pro 设置后台启动、无障碍等权限
-4. 愉快的 run
+4. 在项目目录中建立 config.js 文件，并导出配置
+
+```
+module.exports = {
+  unlockPassword: '锁屏密码'
+}
+```
+
+5. 愉快的 run
 
 ## 开发过程中的小技巧
 
@@ -30,12 +52,11 @@
 ### 注意项
 
 1. better.js 文件是对 autojs 一些 API 的扩展、优化
+2. autojs 对部分 es6 语法支持有限
 
 ### Script Example
 
 ```javascript
-const getMaid = require('../common/maid')
-
 const maid = getMaid('com.hundsun.winner.pazq') // 通过 getMaid(packageName) 来创建一个 APP 女仆，负责启动 APP、关闭 APP 等
 
 function task() {
