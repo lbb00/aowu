@@ -3,11 +3,15 @@ function getMaid(packageName) {
   return {
     launch() {
       launch(packageName)
-      sleep(500)
-      click('允许')
+      sleep(1000)
+      if (currentPackage() === 'com.miui.securitycenter') {
+        click('允许')
+      }
     },
     close() {}
   }
 }
+
+global.getMaid = getMaid
 
 module.exports = getMaid

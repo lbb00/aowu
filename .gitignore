@@ -1,0 +1,6 @@
+*.log
+*.temp
+*.DS_Store
+
+local.test.js
+config.js
