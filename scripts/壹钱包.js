@@ -7,6 +7,12 @@ function task() {
   click('签到')
   waitForActivity('com.paic.zhifu.wallet.activity.control.widget.webview.YQBWebViewActivity')
   sleep(2000)
+  // 关闭弹窗
+  const btnClose = id('btn_close')
+  if (btnClose) {
+    btnClose.click()
+    sleep(1000)
+  }
   const upBtn = text('立 即 签 到').findOnce()
   if (upBtn) {
     upBtn.click()
