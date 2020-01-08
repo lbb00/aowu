@@ -10,6 +10,7 @@ const jd = require('./scripts/京东')
 const jdWallet = require('./scripts/京东金融')
 const kfc = require('./scripts/kfc')
 const lynkco = require('./scripts/lynkco')
+const dazhong = require('./scripts/大众点评')
 
 function start(taskArr) {
   const total = taskArr.length
@@ -25,4 +26,4 @@ function start(taskArr) {
   log('全部任务执行完毕')
 }
 
-start([yunshanfu, pinganzhengquan, jd, liantong, kfc, jdWallet, yiqianbao, lynkco])
+start([yunshanfu, pinganzhengquan, jd, liantong, kfc, jdWallet, yiqianbao, dazhong, lynkco])
