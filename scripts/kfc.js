@@ -12,6 +12,7 @@ function task() {
     clickWidget(upBtn)
     console.log('肯德基签到成功')
   }
+  maid.close()
 }
 
 module.exports = task

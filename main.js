@@ -20,9 +20,9 @@ function start(taskArr) {
     sleep(2000)
     log('执行任务 - 编号 %d', i + 1)
     taskArr[i]()
-    sleep(3000)
+    sleep(2000)
   }
   log('全部任务执行完毕')
 }
 
-start([yiqianbao, yunshanfu, pinganzhengquan, jd, liantong, kfc, lynkco, jdWallet])
+start([yunshanfu, pinganzhengquan, jd, liantong, kfc, jdWallet, yiqianbao, lynkco])

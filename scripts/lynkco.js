@@ -32,6 +32,7 @@ function task() {
       }
     }
   }
+  maid.close()
 }
 
 module.exports = task

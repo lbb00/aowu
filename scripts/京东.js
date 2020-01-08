@@ -10,6 +10,7 @@ function task() {
   sleep(2000)
   const upBtn = text('立即签到').findOnce()
   upBtn && upBtn.click()
+  maid.close()
 }
 
 module.exports = task
