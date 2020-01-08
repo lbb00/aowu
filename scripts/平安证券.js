@@ -14,6 +14,7 @@ function task() {
       return
     }
   }
+  maid.close()
 }
 
 module.exports = task

@@ -11,6 +11,7 @@ function task() {
   if (upBtn) {
     upBtn.click()
   }
+  maid.close()
 }
 
 module.exports = task

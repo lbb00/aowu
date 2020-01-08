@@ -13,6 +13,7 @@ function task() {
       clickWidget(upBtn)
     }
   }
+  maid.close()
 }
 
 module.exports = task

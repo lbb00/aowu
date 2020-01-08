@@ -7,20 +7,21 @@ function task() {
   const upEntry = id('rl_card_container').findOnce()
   upEntry && upEntry.click()
   waitForActivity('com.jd.jrapp.bm.common.web.ui.WebActivity')
-  sleep(2000)
+  sleep(3000)
   const upBtn = desc('今天').findOnce()
   if (upBtn) {
     upBtn.click()
-    sleep(5000)
+    sleep(8000)
   }
-  const cells = bounds(0, 243, 1080, 974)
-    .descMatches(/\+\d+/)
+  const cells = descMatches(/\+\d+/)
     .find()
     .find(clickable(true))
   for (let i = 0; i < cells.length; i++) {
     cells[i].click()
     sleep(1000)
   }
+  sleep(1000)
+  maid.close()
 }
 
 module.exports = task

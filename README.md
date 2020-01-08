@@ -4,7 +4,7 @@
 
 > 基于 [AUTO.JS 8 PRO] 的自动化脚本
 
-Version: v0.1.0
+version: 0.2.0
 
 ## 支持
 
@@ -26,6 +26,8 @@ Version: v0.1.0
   - 签到
 - 中国联通
   - 签到
+- 大众点评
+  - 签到
 
 ### 机型
 
@@ -40,7 +42,7 @@ Version: v0.1.0
 
 ```
 module.exports = {
-  unlockPassword: '锁屏密码'
+  unlockPassword: '123456' // 锁屏密码
 }
 ```
 
