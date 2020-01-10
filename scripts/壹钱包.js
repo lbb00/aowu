@@ -13,7 +13,7 @@ function task() {
     btnClose.click()
     sleep(1000)
   }
-  const upBtn = text('立 即 签 到').findOnce()
+  const upBtn = text('立即签到').findOnce()
   if (upBtn) {
     upBtn.click()
   }
