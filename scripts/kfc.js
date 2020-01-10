@@ -4,6 +4,11 @@ function task() {
   maid.launch()
   waitForActivity('com.yum.android.superkfc.ui.v2.HomeV2Activity')
   sleep(1000)
+  const modelCancelBtn = id('common_iv_back')
+  if (modelCancelBtn) {
+    modelCancelBtn.click()
+  }
+  sleep(1000)
   id('homev2_view_me_iv_12').click()
   waitForActivity('com.yum.android.superkfc.reactnative.ReactActivity')
   sleep(5000)
