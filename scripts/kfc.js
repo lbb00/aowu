@@ -4,7 +4,7 @@ function task() {
   maid.launch()
   waitForActivity('com.yum.android.superkfc.ui.v2.HomeV2Activity')
   sleep(1000)
-  const modelCancelBtn = id('common_iv_back')
+  const modelCancelBtn = id('common_iv_back').findOnce()
   if (modelCancelBtn) {
     modelCancelBtn.click()
   }

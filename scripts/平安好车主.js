@@ -3,8 +3,9 @@ const maid = getMaid('com.pingan.carowner')
 function task() {
   maid.launch()
   waitForActivity('com.pingan.carowner.activity.MainActivity')
-  if (id('ad_cancel')) {
-    id('ad_cancel').click()
+  const adCancel = id('ad_cancel').findOnce()
+  if (adCancel) {
+    adCancel.click()
   }
   sleep(1000)
   text('签到领积分')

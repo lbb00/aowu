@@ -6,9 +6,9 @@ function task() {
   sleep(2000)
   click('签到')
   waitForActivity('com.paic.zhifu.wallet.activity.control.widget.webview.YQBWebViewActivity')
-  sleep(2000)
+  sleep(3000)
   // 关闭弹窗
-  const btnClose = id('btn_close')
+  const btnClose = id('btn_close').findOnce()
   if (btnClose) {
     btnClose.click()
     sleep(1000)
