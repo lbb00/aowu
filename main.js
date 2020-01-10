@@ -28,6 +28,4 @@ function start(taskArr) {
   log('全部任务执行完毕')
 }
 
-// start([yunshanfu, pinganzhengquan, jd, liantong, kfc, jdWallet, yiqianbao, dazhong, pahcz, suning, lynkco])
-// start([kfc, jdWallet, yiqianbao, dazhong, pahcz, suning, lynkco])
-start[lynkco]
+start([yunshanfu, pinganzhengquan, jd, liantong, kfc, jdWallet, yiqianbao, dazhong, pahcz, suning, lynkco])
