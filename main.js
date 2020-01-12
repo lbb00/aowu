@@ -18,9 +18,11 @@ function start(taskArr) {
   const total = taskArr.length
   for (let i = 0; i < total; i++) {
     // 返回autojs pro以便启动其他app，注意赋予autojs后台启动权限
-    launch('org.autojs.autojspro')
-    waitForPackage('org.autojs.autojspro')
-    sleep(2000)
+    if (currentPackage() !== 'org.autojs.autojspro') {
+      launch('org.autojs.autojspro')
+      waitForPackage('org.autojs.autojspro')
+      sleep(2000)
+    }
     log('执行任务 - 编号 %d', i + 1)
     taskArr[i]()
     sleep(2000)
