@@ -4,6 +4,11 @@ function task() {
   maid.launch()
   waitForActivity('com.dianping.v1.NovaMainActivity')
   sleep(2000)
+  const cancelUpdateBtn = id('update_cross_icon').findOnce()
+  if (cancelUpdateBtn) {
+    cancelUpdateBtn.click()
+    sleep(1000)
+  }
   const upEntry = desc('每日福利hot').findOnce()
   if (upEntry) {
     upEntry.click()
