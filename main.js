@@ -15,6 +15,7 @@ const pahcz = require('./scripts/平安好车主')
 const suning = require('./scripts/suning')
 const meituan = require('./scripts/美团')
 const haidilao = require('./scripts/海底捞')
+const smzdm = require('./scripts/smzdm')
 
 const APP_PACKAGE_NAME = 'org.autojs.autojspro'
 
@@ -53,5 +54,6 @@ start([
   suning,
   meituan,
   haidilao,
+  smzdm,
   lynkco
 ])
