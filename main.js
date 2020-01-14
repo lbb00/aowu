@@ -14,6 +14,7 @@ const dazhong = require('./scripts/大众点评')
 const pahcz = require('./scripts/平安好车主')
 const suning = require('./scripts/suning')
 const meituan = require('./scripts/美团')
+const haidilao = require('./scripts/海底捞')
 
 const APP_PACKAGE_NAME = 'org.autojs.autojspro'
 
@@ -39,4 +40,18 @@ function start(taskArr) {
   log('全部任务执行完毕')
 }
 
-start([yunshanfu, pinganzhengquan, jd, liantong, kfc, jdWallet, yiqianbao, dazhong, pahcz, suning, lynkco, meituan])
+start([
+  yunshanfu,
+  pinganzhengquan,
+  jd,
+  liantong,
+  kfc,
+  jdWallet,
+  yiqianbao,
+  dazhong,
+  pahcz,
+  suning,
+  meituan,
+  haidilao,
+  lynkco
+])
