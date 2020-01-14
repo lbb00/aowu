@@ -1,5 +1,6 @@
 const config = require('../config')
 const keyboard = []
+
 if (!device.isScreenOn()) {
   device.wakeUp()
   sleep(2000)

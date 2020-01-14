@@ -11,7 +11,7 @@ function task() {
   const upBtn = desc('今天').findOnce()
   if (upBtn) {
     upBtn.click()
-    sleep(8000)
+    sleep(10000)
   }
   const cells = descMatches(/\+\d+/)
     .find()

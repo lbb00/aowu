@@ -13,14 +13,27 @@ const lynkco = require('./scripts/lynkco')
 const dazhong = require('./scripts/大众点评')
 const pahcz = require('./scripts/平安好车主')
 const suning = require('./scripts/suning')
+const meituan = require('./scripts/美团')
+const haidilao = require('./scripts/海底捞')
+const smzdm = require('./scripts/smzdm')
+
+const APP_PACKAGE_NAME = 'org.autojs.autojspro'
+
+/**
+ * 返回主程序以便启动其他APP，注意赋予主程序后台启动权限
+ */
+function launchMainApp() {
+  if (currentPackage() !== APP_PACKAGE_NAME) {
+    launch(APP_PACKAGE_NAME)
+    waitForPackage(APP_PACKAGE_NAME)
+    sleep(2000)
+  }
+}
 
 function start(taskArr) {
   const total = taskArr.length
   for (let i = 0; i < total; i++) {
-    // 返回autojs pro以便启动其他app，注意赋予autojs后台启动权限
-    launch('org.autojs.autojspro')
-    waitForPackage('org.autojs.autojspro')
-    sleep(2000)
+    launchMainApp()
     log('执行任务 - 编号 %d', i + 1)
     taskArr[i]()
     sleep(2000)
@@ -28,4 +41,19 @@ function start(taskArr) {
   log('全部任务执行完毕')
 }
 
-start([yunshanfu, pinganzhengquan, jd, liantong, kfc, jdWallet, yiqianbao, dazhong, pahcz, suning, lynkco])
+start([
+  yunshanfu,
+  pinganzhengquan,
+  jd,
+  liantong,
+  kfc,
+  jdWallet,
+  yiqianbao,
+  dazhong,
+  pahcz,
+  suning,
+  meituan,
+  haidilao,
+  smzdm,
+  lynkco
+])
