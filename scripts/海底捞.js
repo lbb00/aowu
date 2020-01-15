@@ -6,7 +6,7 @@ function task() {
   sleep(2000)
   click(953 + 5, 272 + 5)
   waitForActivity('com.haidilao.hailehui.biz.impl.activity.SecondActivity')
-  sleep(1000)
+  sleep(4000)
   maid.close()
 }
 
