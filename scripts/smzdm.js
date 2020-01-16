@@ -8,7 +8,8 @@ function task() {
   if (cancelUpdateBtn) {
     cancelUpdateBtn.click()
   }
-  sleep(2000)
+  sleep(1000)
+  const upEntry = text('签到福利').findOnce()
   if (upEntry) {
     clickWidget(upEntry)
     waitForActivity('com.smzdm.client.android.user_center.signin.SignInActivity')
