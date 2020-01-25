@@ -4,6 +4,11 @@ function task() {
   maid.launch()
   waitForActivity('com.hundsun.winner.pazq.ui.web.WebViewActivity')
   sleep(2000)
+  const btnCancel = id('BTN_close').findOnce()
+  if (btnCancel) {
+    btnCancel.click()
+    sleep(1000)
+  }
   let upBtn = textMatches(/^签到.*/)
     .clickable(true)
     .findOnce()
