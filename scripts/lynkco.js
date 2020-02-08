@@ -1,6 +1,6 @@
 const maid = getMaid('com.lynkco.customer')
 
-function task() {
+function task () {
   maid.launch()
   waitForActivity('com.geely.lynkco.main.activity.LynkCoTabMainActivity')
   sleep(6000)

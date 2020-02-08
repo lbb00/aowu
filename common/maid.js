@@ -1,14 +1,14 @@
-function getMaid(packageName) {
+function getMaid (packageName) {
   if (!packageName) toast('缺少包名')
   return {
-    launch() {
+    launch () {
       launch(packageName)
       sleep(1000)
       if (currentPackage() === 'com.miui.securitycenter') {
         click('允许')
       }
     },
-    close() {
+    close () {
       sleep(2000)
       app.openAppSetting(packageName)
       text(app.getAppName(packageName)).waitFor()

@@ -1,6 +1,6 @@
 const maid = getMaid('com.dianping.v1')
 
-function task() {
+function task () {
   maid.launch()
   waitForActivity('com.dianping.v1.NovaMainActivity')
   sleep(2000)

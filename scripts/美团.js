@@ -1,6 +1,6 @@
 const maid = getMaid('com.sankuai.meituan')
 
-function task() {
+function task () {
   maid.launch()
   waitForActivity('com.meituan.android.pt.homepage.activity.MainActivity')
   sleep(2000)
@@ -20,8 +20,12 @@ function task() {
     if (reUpBtn) {
       clickWidget(reUpBtn)
     } else {
-      // 普通签到
+      const upBtn = text('cf1ef851fe4302b10efeb90541e1d6f45595').findOnce()
+      if (upBtn) {
+        clickWidget(upBtn)
+      }
     }
+    sleep(2000)
   }
 
   maid.close()

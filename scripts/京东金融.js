@@ -1,6 +1,6 @@
 const maid = getMaid('com.jd.jrapp')
 
-function task() {
+function task () {
   maid.launch()
   waitForActivity('com.jd.jrapp.bm.youth.ui.YouthMainActivity')
   sleep(1000)

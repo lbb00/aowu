@@ -1,6 +1,6 @@
 const maid = getMaid('com.yek.android.kfc.activitys')
 
-function task() {
+function task () {
   maid.launch()
   waitForActivity('com.yum.android.superkfc.ui.v2.HomeV2Activity')
   sleep(1000)

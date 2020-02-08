@@ -1,6 +1,6 @@
 const maid = getMaid('com.paic.zhifu.wallet.activity')
 
-function task() {
+function task () {
   maid.launch()
   waitForActivity('com.paic.zhifu.wallet.activity.modules.homev6.YiqianbaoActivityV6')
   sleep(2000)

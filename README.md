@@ -4,7 +4,7 @@
 
 > 基于 [AUTO.JS 8 PRO] 的自动化脚本
 
-version: 0.4.0
+version: 0.4.1
 
 ## 支持
 
