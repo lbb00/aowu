@@ -1,6 +1,6 @@
 const maid = getMaid('com.pingan.carowner')
 
-function task() {
+function task () {
   maid.launch()
   waitForActivity('com.pingan.carowner.activity.MainActivity')
   sleep(2000)

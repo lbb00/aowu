@@ -10,7 +10,7 @@ const jd = require('./scripts/京东')
 const jdWallet = require('./scripts/京东金融')
 const kfc = require('./scripts/kfc')
 const lynkco = require('./scripts/lynkco')
-const dazhong = require('./scripts/大众点评')
+const dazhong = require('./scripts/大众点评').default
 const pahcz = require('./scripts/平安好车主')
 const suning = require('./scripts/suning')
 const meituan = require('./scripts/美团')
@@ -22,7 +22,7 @@ const APP_PACKAGE_NAME = 'org.autojs.autojspro'
 /**
  * 返回主程序以便启动其他APP，注意赋予主程序后台启动权限
  */
-function launchMainApp() {
+function launchMainApp () {
   if (currentPackage() !== APP_PACKAGE_NAME) {
     launch(APP_PACKAGE_NAME)
     waitForPackage(APP_PACKAGE_NAME)
@@ -30,7 +30,7 @@ function launchMainApp() {
   }
 }
 
-function start(taskArr) {
+function start (taskArr) {
   const total = taskArr.length
   for (let i = 0; i < total; i++) {
     launchMainApp()

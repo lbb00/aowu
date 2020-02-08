@@ -1,5 +1,5 @@
 const maid = getMaid('com.unionpay')
-function task() {
+function task () {
   maid.launch()
   waitForActivity('com.unionpay.activity.UPActivityMain')
   sleep(1000)

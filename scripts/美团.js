@@ -1,6 +1,6 @@
 const maid = getMaid('com.sankuai.meituan')
 
-function task() {
+function task () {
   maid.launch()
   waitForActivity('com.meituan.android.pt.homepage.activity.MainActivity')
   sleep(2000)

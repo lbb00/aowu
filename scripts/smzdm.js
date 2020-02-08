@@ -1,6 +1,6 @@
 const maid = getMaid('com.smzdm.client.android')
 
-function task() {
+function task () {
   maid.launch()
   waitForActivity('com.smzdm.client.android.activity.HomeActivity')
   sleep(2000)

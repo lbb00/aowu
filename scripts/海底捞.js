@@ -1,6 +1,6 @@
 const maid = getMaid('com.haidilao')
 
-function task() {
+function task () {
   maid.launch()
   waitForActivity('com.haidilao.hailehui.biz.impl.activity.MainActivity')
   sleep(2000)

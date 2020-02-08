@@ -1,6 +1,6 @@
 const maid = getMaid('com.jingdong.app.mall')
 
-function task() {
+function task () {
   maid.launch()
   waitForActivity('com.jingdong.app.mall.MainFrameActivity')
   sleep(2000)

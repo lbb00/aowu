@@ -1,6 +1,6 @@
 const maid = getMaid('com.sinovatech.unicom.ui')
 
-function task() {
+function task () {
   maid.launch()
   waitForActivity('com.sinovatech.unicom.basic.ui.activity.MainActivity')
   sleep(2000)
