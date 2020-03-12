@@ -7,8 +7,8 @@ function task () {
   const cancelUpdateBtn = id('iv_content_cancel').findOnce()
   if (cancelUpdateBtn) {
     cancelUpdateBtn.click()
+    sleep(1000)
   }
-  sleep(1000)
   const upEntry = text('签到福利').findOnce()
   if (upEntry) {
     clickWidget(upEntry)
