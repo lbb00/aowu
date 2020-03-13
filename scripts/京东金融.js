@@ -3,7 +3,12 @@ const maid = getMaid('com.jd.jrapp')
 function task () {
   maid.launch()
   waitForActivity('com.jd.jrapp.bm.youth.ui.YouthMainActivity')
-  sleep(1000)
+  sleep(2000)
+  const modelCancelBtn = id('ibtn_zc_product_notice_board_close').findOnce()
+  if (modelCancelBtn) {
+    modelCancelBtn.click()
+    sleep(1000)
+  }
   const upEntry = id('rl_card_container').findOnce()
   upEntry && upEntry.click()
   waitForActivity('com.jd.jrapp.bm.common.web.ui.WebActivity')
