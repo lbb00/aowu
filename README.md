@@ -6,9 +6,12 @@
 
 version: 0.4.2
 
+由于精力有限，并没有提供打包好的安卓包可以用，也没有界面。需要使用的小伙伴需要自己有一定的编程和动手能力。
+
 ## 支持
 
-- 小米息屏状态下，9宫格键盘自动解锁
+- 小米息屏状态下，9 宫格键盘自动解锁（需要配置）
+- 完成单个 APP 任务后强制结束 APP
 
 ### APP
 
@@ -43,21 +46,23 @@ version: 0.4.2
 
 ### 机型
 
-- 小米 8 MIUI11
+- 小米 8 - MIUI11
+
+若运行在非小米机型上，需要移除解锁屏幕的代码
 
 ## 如何使用
 
-1. 下载 autojs8 pro，pro 版本需要购买，支持一下作者吧
-2. 将本仓库下载解压到手机中的 autojs 项目目录
-3. 需要给 autojs8 pro 设置后台启动、无障碍等权限（权限非常重要）
-4. 在项目目录中建立 config.js 文件，并导出配置
+1. 手机上下载 autojs8 pro，pro 版本需要购买，支持一下作者吧。需要给 autojs8 pro 设置后台启动、无障碍等权限（权限非常重要）
+2. 将本仓库下载，使用 VSCode 等工具打开，在项目目录中建立 config.js 文件，如下：
 
-```
+```javascript
 module.exports = {
   unlockPassword: '123456' // 锁屏密码
 }
 ```
 
+3. 根据自己的需要在 main.js 中修改需要执行的任务，也可以自己开发更多脚本
+4. 在 VSCode 上安装 autojs 插件，并连接到手机，将脚本发送至手机（或是手动拷贝到手机）
 5. 愉快的 run
 
 ## 开发过程中的小技巧
@@ -75,10 +80,11 @@ module.exports = {
 ### Script Example
 
 ```javascript
-const maid = getMaid('com.hundsun.winner.pazq') // 通过 getMaid(packageName) 来创建一个 APP 女仆，负责启动 APP、关闭 APP 等
+// 通过 getMaid(packageName) 来创建一个 APP 女仆，负责启动 APP、关闭 APP 等
+const maid = getMaid('com.hundsun.winner.pazq')
 
 function task() {
-  maid.launch()
+  maid.launch() // 启动 APP
   waitForActivity('com.hundsun.winner.pazq.ui.web.WebViewActivity')
   sleep(2000)
   let upBtn = textMatches(/^签到.*/)
@@ -92,6 +98,7 @@ function task() {
       return
     }
   }
+  maid.close() // 关闭APP
 }
 
 module.exports = task

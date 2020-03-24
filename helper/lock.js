@@ -1,3 +1,5 @@
+// 用本脚本自动测试什么样的参数可以上滑解锁屏幕
+
 const errorMessage = msg => {
   console.error(msg)
   device.isScreenOn() && KeyCode(26)

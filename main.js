@@ -1,7 +1,10 @@
+// global
 require('./common/better')
 require('./common/maid')
-require('./common/unlock')
 
+const unlock = require('./common/unlock')
+
+// scripts
 const yunshanfu = require('./scripts/云闪付')
 const yiqianbao = require('./scripts/壹钱包')
 const pinganzhengquan = require('./scripts/平安证券')
@@ -22,7 +25,7 @@ const APP_PACKAGE_NAME = 'org.autojs.autojspro'
 /**
  * 返回主程序以便启动其他APP，注意赋予主程序后台启动权限
  */
-function launchMainApp () {
+function launchMainApp() {
   if (currentPackage() !== APP_PACKAGE_NAME) {
     launch(APP_PACKAGE_NAME)
     waitForPackage(APP_PACKAGE_NAME)
@@ -30,7 +33,7 @@ function launchMainApp () {
   }
 }
 
-function start (taskArr) {
+function doTasks(taskArr) {
   const total = taskArr.length
   for (let i = 0; i < total; i++) {
     launchMainApp()
@@ -38,6 +41,11 @@ function start (taskArr) {
     taskArr[i]()
     sleep(2000)
   }
+}
+
+function start(taskArr) {
+  unlock()
+  doTasks(taskArr)
   log('全部任务执行完毕')
 }
 
