@@ -3,12 +3,12 @@ const maid = getMaid('com.yek.android.kfc.activitys')
 function task () {
   maid.launch()
   waitForActivity('com.yum.android.superkfc.ui.v2.HomeV2Activity')
-  sleep(1000)
+  sleep(2000)
   const modelCancelBtn = id('common_iv_back').findOnce()
   if (modelCancelBtn) {
     modelCancelBtn.click()
+    sleep(1000)
   }
-  sleep(1000)
   id('homev2_view_me_iv_12').click()
   waitForActivity('com.yum.android.superkfc.reactnative.ReactActivity')
   sleep(5000)

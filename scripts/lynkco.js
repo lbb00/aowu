@@ -3,7 +3,12 @@ const maid = getMaid('com.lynkco.customer')
 function task () {
   maid.launch()
   waitForActivity('com.geely.lynkco.main.activity.LynkCoTabMainActivity')
-  sleep(6000)
+  sleep(5000)
+  const updateCancelBtn = text('暂不更新').findOnce()
+  if (updateCancelBtn) {
+    updateCancelBtn.click()
+    sleep(1000)
+  }
   swipe(300, 1700, 300, 200, 300)
   sleep(2000)
   let shareCount = 0
