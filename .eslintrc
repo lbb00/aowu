@@ -6,7 +6,31 @@
   "extends": ["standard"],
   "globals": {
     "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
+    "SharedArrayBuffer": "readonly",
+    "launch": "readonly",
+    "waitForPackage": "readonly",
+    "sleep": "readonly",
+    "waitForActivity": "readonly",
+    "textMatches": "readonly",
+    "log": "readonly",
+    "id": "readonly",
+    "text": "readonly",
+    "currentActivity": "readonly",
+    "click": "readonly",
+    "currentPackage": "readonly",
+    "context": "readonly",
+    "desc": "readonly",
+    "clickWidget": "readonly",
+    "getMaid": "readonly",
+    "back": "readonly",
+    "app": "readonly",
+    "toast": "readonly",
+    "descMatches": "readonly",
+    "clickable":"readonly",
+    "swipe":"readonly",
+    "device": "readonly",
+    "isUnlocked": "readonly",
+    "gesture": "readonly"
   },
   "parserOptions": {
     "ecmaVersion": 2018
