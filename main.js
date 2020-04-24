@@ -25,7 +25,7 @@ const APP_PACKAGE_NAME = 'org.autojs.autojspro'
 /**
  * 返回主程序以便启动其他APP，注意赋予主程序后台启动权限
  */
-function launchMainApp() {
+function launchMainApp () {
   if (currentPackage() !== APP_PACKAGE_NAME) {
     launch(APP_PACKAGE_NAME)
     waitForPackage(APP_PACKAGE_NAME)
@@ -33,7 +33,7 @@ function launchMainApp() {
   }
 }
 
-function doTasks(taskArr) {
+function doTasks (taskArr) {
   const total = taskArr.length
   for (let i = 0; i < total; i++) {
     launchMainApp()
@@ -43,7 +43,7 @@ function doTasks(taskArr) {
   }
 }
 
-function start(taskArr) {
+function start (taskArr) {
   unlock()
   doTasks(taskArr)
   log('全部任务执行完毕')
