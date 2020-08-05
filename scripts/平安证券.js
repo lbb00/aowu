@@ -9,17 +9,25 @@ function task () {
     btnCancel.click()
     sleep(1000)
   }
-  const upBtn = textMatches(/^签到.*/)
-    .clickable(true)
-    .findOnce()
-  sleep(2000)
-  if (upBtn) {
-    upBtn.click()
-    if (text('恭喜您获得').findOnce()) {
-      log('平安证券 - 签到成功')
-      return
+
+  const me = text('我的').findOnce()
+  if (me) {
+    clickWidget(me)
+    sleep(1000)
+    const entryBtn = text('签到').findOnce()
+    if (entryBtn) {
+      clickWidget(entryBtn)
+      waitForActivity('com.hundsun.winner.pazq.ui.web.WebViewActivity')
+      sleep(2000)
+      const upBtn = textMatches(/^签到.*/).clickable(true).findOnce()
+      if (upBtn) {
+        clickWidget(upBtn)
+        log('平安证券 - 签到成功')
+      }
+      sleep(2000)
     }
   }
+
   maid.close()
 }
 
