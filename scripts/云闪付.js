@@ -8,7 +8,7 @@ function task () {
     upEntry.click()
     waitForActivity('com.unionpay.activity.react.UPReactNativeActivity')
     sleep(2000)
-    const upBtn = text('签到').findOnce()
+    const upBtn = text('立即签到').findOnce()
     if (upBtn) {
       clickWidget(upBtn)
     }

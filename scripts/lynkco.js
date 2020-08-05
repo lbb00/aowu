@@ -4,35 +4,28 @@ function task () {
   maid.launch()
   waitForActivity('com.geely.lynkco.main.activity.LynkCoTabMainActivity')
   sleep(5000)
-  const updateCancelBtn = text('暂不更新').findOnce()
-  if (updateCancelBtn) {
-    updateCancelBtn.click()
-    sleep(1000)
-  }
-  swipe(300, 1700, 300, 200, 300)
-  sleep(2000)
   let shareCount = 0
   while (shareCount < 3) {
+    const updateCancelBtn = text('暂不更新').findOnce()
+    if (updateCancelBtn) {
+      updateCancelBtn.click()
+      sleep(1000)
+    }
     swipe(300, 1700, 300, 200, 300)
     sleep(2000)
     const list = descMatches(/.*[天时秒]前$/).find()
     for (let i = 0; i < list.length; i++) {
       const obj = list[i]
       if (obj && shareCount < 3) {
-        obj
-          .parent()
-          .parent()
-          .parent()
-          .child(1)
-          .child(3)
-          .click()
-        sleep(3000)
-        clickWidget(desc('微信好友').findOnce())
-        shareCount++
-        waitForActivity('com.tencent.mm.ui.transmit.SelectConversationUI')
-        sleep(2000)
-        back()
-        waitForActivity('com.geely.lynkco.main.activity.LynkCoTabMainActivity')
+        if (click(970, list[0].bounds().centerY())) {
+          sleep(2000)
+          clickWidget(desc('微信好友').findOnce())
+          shareCount++
+          waitForActivity('com.tencent.mm.ui.transmit.SelectConversationUI')
+          sleep(2000)
+          back()
+          waitForActivity('com.geely.lynkco.main.activity.LynkCoTabMainActivity')
+        }
         sleep(2000)
       }
     }

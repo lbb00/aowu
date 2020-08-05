@@ -12,7 +12,7 @@ function task () {
   }
   click('签到')
   waitForActivity('com.paic.zhifu.wallet.activity.control.widget.webview.YQBWebViewActivity')
-  sleep(3000)
+  sleep(4000)
   const upBtn = text('立即签到').findOnce()
   if (upBtn) {
     upBtn.click()
