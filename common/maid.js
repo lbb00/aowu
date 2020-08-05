@@ -12,9 +12,9 @@ function getMaid (packageName) {
       sleep(2000)
       app.openAppSetting(packageName)
       text(app.getAppName(packageName)).waitFor()
-      const isSure = textMatches(/(.*强.*|.*停.*|.*结.*|.*行.*)/).findOne()
+      const isSure = textMatches(/.*结束.*/).findOne()
       if (isSure.enabled()) {
-        textMatches(/(.*强.*|.*停.*|.*结.*|.*行.*)/)
+        textMatches(/.*结束.*/)
           .findOne()
           .click()
         textMatches(/(.*确.*|.*定.*)/)

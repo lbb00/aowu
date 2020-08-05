@@ -8,16 +8,22 @@ version: 0.5.0
 
 ## 恶龙咆哮
 
-由于精力有限，并没有提供打包好的安卓包可以用，也没有界面。需要使用的小伙伴需要自己有一定的编程和动手能力。
+由于精力有限，并没有提供打包好的安卓包可以用，也没有界面。需要使用的小伙伴需要自己有一定的编程和动手能力，欢迎开源大佬们贡献脚本。
 
 !> 本软件仅供学习交流，请勿用与非法灰产，后果自负。
 
-## 支持
+## 特点
 
-- 小米息屏状态下，9 宫格键盘自动解锁（需要配置）
-- 完成单个 APP 任务后强制结束 APP
+- MIUI12 息屏状态下点亮屏幕，9 宫格键盘自动解锁（需要配置密码）
+- 完成单个 APP 任务后强制结束 APP，避免占用过多的内存
 
-### APP
+### 支持系统
+
+- MIUI12 - 小米 10 pro 亲测有效
+
+若运行在非小米机型上，需要移除解锁屏幕的代码
+
+### 目前可以执行的任务
 
 - 京东商城
   - 签到
@@ -48,38 +54,32 @@ version: 0.5.0
 - 什么值得买
   - 签到
 
-### 机型
-
-- 小米 8 - MIUI11
-
-若运行在非小米机型上，需要移除解锁屏幕的代码
-
 ## 如何使用
 
 1. 手机上下载并登陆 autojs8 pro。需要给 autojs8 pro 设置后台启动、无障碍等权限（权限非常重要）
-2. 将本仓库下载，使用 VSCode 等工具打开，在项目目录中建立 config.js 文件，如下：
+2. 将本仓库下载，使用 VSCode 等工具打开，在项目目录中建立 config.js 文件，并配置（配置内容在下方）
+3. 根据自己的需要在 main.js 中修改需要执行的任务，也可以自己开发更多脚本
+4. 在 VSCode 上安装 `Auto.js-Pro-Ext` 插件，并连接到手机，具体的使用教程请参考插件文档
+5. 愉快的 run
 
 ```javascript
+// config.js
 module.exports = {
-  unlockPassword: '123456' // 锁屏密码
+  unlockPassword: '123456', // 锁屏密码
 }
 ```
 
-3. 根据自己的需要在 main.js 中修改需要执行的任务，也可以自己开发更多脚本
-4. 在 VSCode 上安装 autojs 插件，并连接到手机，将脚本发送至手机（或是手动拷贝到手机）
-5. 愉快的 run
+## 开发小技巧
 
-## 开发过程中的小技巧
-
-1. 通过 Android Studio 的 Device Monitor 来查看当前 activity 的布局
+1. 通过 Android Studio 的 Device Monitor 来查看当前 activity 的布局，可以更精准的开发脚本
 2. 进入 adb shell，使用`dumpsys activity | grep "mResu"`命令查看当前的 activity 名称
 
-## 开发更多脚本
+## 基于本项目开发更多脚本
 
 ### 注意项
 
 1. better.js 文件是对 autojs 一些 API 的扩展、优化
-2. autojs 对部分 es6 语法支持有限
+2. autojs 对 es6 语法支持有限
 
 ### Script Example
 
@@ -88,12 +88,15 @@ module.exports = {
 const maid = getMaid('com.hundsun.winner.pazq')
 
 function task() {
-  maid.launch() // 启动 APP
+  // 启动 APP
+  maid.launch()
+
+  // 等待主页加载出来
   waitForActivity('com.hundsun.winner.pazq.ui.web.WebViewActivity')
   sleep(2000)
-  let upBtn = textMatches(/^签到.*/)
-    .clickable(true)
-    .findOnce()
+
+  // 寻找签到按钮并点击
+  const upBtn = textMatches(/^签到.*/).clickable(true).findOnce()
   if (upBtn) {
     upBtn.click()
     sleep(1000)
@@ -102,7 +105,9 @@ function task() {
       return
     }
   }
-  maid.close() // 关闭APP
+
+  // 关闭APP，减少内存压力
+  maid.close()
 }
 
 module.exports = task
