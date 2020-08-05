@@ -3,7 +3,7 @@
   "main": "main.js",
   "ignore": ["build","node_modules"],
   "packageName": "org.loveonelong.aowu",
-  "versionName": "0.5.0",
-  "versionCode": 7,
+  "versionName": "1.0.0",
+  "versionCode": 8,
   "author": "onelong"
 }

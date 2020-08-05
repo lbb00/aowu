@@ -49,16 +49,16 @@ function start (taskArr) {
 }
 
 start([
-  // haidilao,
-  // lynkco,
-  // liantong,
-  // yunshanfu,
-  // pinganzhengquan,
-  // smzdm,
-  // kfc,
-  // jd,
-  // pahcz,
-  // yiqianbao
+  haidilao,
+  lynkco,
+  liantong,
+  yunshanfu,
+  pinganzhengquan,
+  smzdm,
+  kfc,
+  jd,
+  pahcz,
+  yiqianbao
 
   // jdWallet,
   // dazhong,
