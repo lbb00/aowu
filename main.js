@@ -16,7 +16,6 @@ const lynkco = require('./scripts/lynkco')
 const dazhong = require('./scripts/大众点评')
 const pahcz = require('./scripts/平安好车主')
 const suning = require('./scripts/suning')
-const meituan = require('./scripts/美团')
 const haidilao = require('./scripts/海底捞')
 const smzdm = require('./scripts/smzdm')
 
@@ -50,18 +49,18 @@ function start (taskArr) {
 }
 
 start([
-  yunshanfu,
-  pinganzhengquan,
-  jd,
-  liantong,
-  kfc,
-  jdWallet,
-  yiqianbao,
-  dazhong,
-  pahcz,
-  suning,
-  meituan,
-  haidilao,
-  smzdm,
-  lynkco
+  // haidilao,
+  // lynkco,
+  // liantong,
+  // yunshanfu,
+  // pinganzhengquan,
+  // smzdm,
+  // kfc,
+  // jd,
+  // pahcz,
+  // yiqianbao
+
+  // jdWallet,
+  // dazhong,
+  // suning
 ])

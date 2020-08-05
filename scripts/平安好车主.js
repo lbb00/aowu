@@ -9,7 +9,7 @@ function task () {
     adCancel.click()
     sleep(1000)
   }
-  const upEntry = text('签到领积分').findOnce()
+  const upEntry = text('去签到').findOnce()
   if (upEntry) {
     upEntry.click()
     waitForActivity('com.pingan.carowner.browser.BaseWebViewActivity')
